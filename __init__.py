@@ -10,7 +10,7 @@ From. models import db # Assuming database instances are defined in models.py
 #Initialize some core components
 def create_app():
 Create and configure Flask applications
-application.config.from_object('config. Config '# Import Configuration
+application.config.from_object('config.  Config '# Import Configuration
 Db. init_mapp (application) # Initialize database
 
 with application.app_context():
@@ -24,3 +24,26 @@ return application
 #- Registration blueprint
 #- Configure CORS, etc
 
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from features.order_history import order_history_bp
+from features.promotions import promotions_bp
+from features.user_account import user_account_bp
+
+db = SQLAlchemy()
+
+def create_app():
+app = Flask(__name__)
+app.config.from_object('config. Config')
+    
+db.init_app(app)
+
+#Registration blueprint
+app.register_blueprint(order_history_bp)
+app.register_blueprint(promotions_bp)
+app.register_blueprint(user_account_bp)
+
+with app.app_context():
+db.create_all()
+
+return app
