@@ -1,126 +1,126 @@
 /* static/css/style.css */
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
-    margin: 0;
-    padding: 0;
+font-family: Arial, sans-serif;
+background-color: #f8f8f8;
+margin: 0;
+padding: 0;
 }
 
 h1 {
-    text-align: center;
-    color: #333;
+text-align: center;
+color: #333;
 }
 
 form {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 10px;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+max-width: 600px;
+margin: 20px auto;
+padding: 10px;
+background: #fff;
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
+list-style-type: none;
+padding: 0;
 }
 
 li {
-    margin-bottom: 10px;
+margin-bottom: 10px;
 }
 
 button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 4px;
+background-color: #4CAF50;
+color: white;
+border: none;
+padding: 10px 20px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+border-radius: 4px;
 }
 
 button:hover {
-    background-color: #45a049;
+background-color: #45a049;
 }
 
 /* static/css/style.css */
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
-    margin: 0;
-    padding: 0;
+font-family: Arial, sans-serif;
+background-color: #f8f8f8;
+margin: 0;
+padding: 0;
 }
 
 h1 {
-    text-align: center;
-    color: #333;
+text-align: center;
+color: #333;
 }
 
 form {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 10px;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+max-width: 600px;
+margin: 20px auto;
+padding: 10px;
+background: #fff;
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
+list-style-type: none;
+padding: 0;
 }
 
 li {
-    margin-bottom: 10px;
+margin-bottom: 10px;
 }
 
 button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 4px;
+background-color: #4CAF50;
+color: white;
+border: none;
+padding: 10px 20px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+border-radius: 4px;
 }
 
 button:hover {
-    background-color: #45a049;
+background-color: #45a049;
 }
 
-<!-- app/templates/index.html -->
+<!--  app/templates/index.html -->
 
-<!DOCTYPE html>
+<! DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0    <title>餐厅点单</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device width, initial scale=1.0<title>Restaurant ordering</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>菜单</h1>
-    <form action="{{ url_for('order') }}" method="POST">
-        <ul>
-            {% for item in menu_items %}
-            <li>
-                <input type="checkbox" name="items" value="{{ item.id }}"> {{ item.name }} - ¥{{ item.price }}
-            </li>
-            {% endfor %}
-        </ul>
-        <button type="submit">提交订单</button>
-    </form>
+<h1>Menu</h1>
+<form action="{{ url_for('order') }}" method="POST">
+<ul>
+{% for item in menu_items %}
+<li>
+<input type="checkbox" name="items" value="{{ item.id }}"> {{ item.name }} - ¥{{ item.price }}
+</li>
+{% endfor %}
+</ul>
+<button type="submit">Submit Order</button>
+</form>
 
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 </html>
 
