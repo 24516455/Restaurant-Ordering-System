@@ -1,39 +1,78 @@
 
-# features/order_history/__init__.py
+#Features/Order History/Initialization. py
 
-from flask import Blueprint
+Import blueprint from flask
 
-order_history_bp = Blueprint('order_history', __name__)
+Order_cistory_bp=blueprint ("order_cistory", __name__)
 
-from . import routes  # 导入路由
+From. Import Route # Import Route
 
-# features/order_history/routes.py
+#Features/Order History/Route. py
 
-from flask import render_template
-from . import order_history_bp
-from app.models import Order
+Import render_template from Flask
+From. Import Orders_History_ bp
+Import orders from app. models
 
-@order_history_bp.route('/order_history')
-def order_history():
-    orders = Order.query.all()  # 查询所有订单
-    return render_template('order_history.html', orders=orders)
+@order_history_bp.route（'/order_history'）
+Define order history ():
+Orders=Order. query. all() # Query all orders
+Return render_template ('order_cistory. html ', orders=orders)
 
-<!-- features/order_history/templates/order_history.html -->
+<!--  Features/Order History/Templates/Order History. html ->
 
-<!DOCTYPE html>
-<html lang="en">
+<! DOCTYPE html>
+<html lang=“en”>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>订单历史</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<meta character set="UTF-8">
+<meta name="viewport" content="width=device width, initial - s
+#Features/Order History/Initialization. py
+
+Import blueprint from flask
+
+Order_cistory_bp=blueprint ("order_cistory", __name__)
+
+From. Import Route # Import Route
+
+#Features/Order History/Route. py
+
+Import Rendering from Flask - Template
+From. Import Orders_History_ bp
+Import documents from app. models
+
+@order_history_bp.route（'/order_history'）
+Define order history ():
+Orders=Order. query. all() # Query all orders
+Return render_template ('order_cistory. html ', orders=orders)
+
+<!--  Features/Order History/Templates/Order History. html ->
+
+<! DOCTYPE html>
+<html lang=“en”>
+<head>
+<meta character set="UTF-8">
+<meta name="viewport" content="width"=device width, initial scale=1.0 ">
+<title>Catalog History</title>
+<Link rel="Style Sheet" ref="{url_for 'Static', file name='ss/style. css')}">
 </head>
 <body>
-    <h1>您的订单历史</h1>
-    <ul>
-        {% for order in orders %}
-        <li>订单ID: {{ order.id }}, 总价: ¥{{ order.total_price }}</li>
-        {% endfor %}
-    </ul>
+<h1>Your order history</h1>
+<ul>
+{% represents the order% in the order%}
+<li>Order ID: {order. ID}}, Total Price: ¥ {order. total price}}</li>
+%endfor%
+</ul>
+</body>
+</html>
+le=1.0“>
+<title>Catalog History</title>
+<link rel="stylesheet" ref="{url_for ('static ', file name=' ss/style. css')}">
+</head>
+<body>
+<h1>Your order history</h1>
+<ul>
+{% represents the order% in the order%}
+<li>Order ID: {order. ID}}, Total Price: ¥ {order. total price}}</li>
+｛%endfor%｝
+</ul>
 </body>
 </html>
